@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stackly BPO - Viewer Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+    >
+
+    <link rel="stylesheet" href="css/viewer.css">
+</head>
+
+<body>
+
+    <!-- ================= OVERLAY ================= -->
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar" id="sidebar">
+
+     <div class="brand">
+
+    <a href="index.html" class="brand-logo" aria-label="Stackly Home">
+        <img
+            src="assets/logo img1.webp"
+            alt="Stackly"
+            class="brand-logo-image"
+        >
+    </a>
+
+    <div class="brand-info">
+        <span>VIEWER</span>
+    </div>
+
+</div>
+        <!-- Viewer Profile -->
+
+        <div class="viewer-profile">
+
+            <img
+                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=85"
+                alt="Viewer profile"
+            >
+
+            <div>
+                <strong>Alex Morgan</strong>
+                <span>Viewer</span>
+            </div>
+
+        </div>
+
+
+        <!-- Navigation -->
+
+        <nav class="sidebar-nav">
+
+            <p class="nav-heading">OVERVIEW</p>
+
+            <a
+                href="#overview"
+                class="nav-link active"
+                data-page="overview"
+            >
+                <i class="fa-solid fa-chart-pie"></i>
+                <span>Overview</span>
+            </a>
+
+
+            <a
+                href="#customers"
+                class="nav-link"
+                data-page="customers"
+            >
+                <i class="fa-solid fa-users"></i>
+                <span>Customers</span>
+            </a>
+
+
+            <a
+                href="#services"
+                class="nav-link"
+                data-page="services"
+            >
+                <i class="fa-solid fa-briefcase"></i>
+                <span>Services</span>
+            </a>
+
+
+            <a
+                href="#reports"
+                class="nav-link"
+                data-page="reports"
+            >
+                <i class="fa-solid fa-chart-column"></i>
+                <span>Reports</span>
+            </a>
+
+
+            <p class="nav-heading management-title">
+                INFORMATION
+            </p>
+
+
+            <a
+                href="#messages"
+                class="nav-link"
+                data-page="messages"
+            >
+                <i class="fa-solid fa-comments"></i>
+                <span>Messages</span>
+                <small>8</small>
+            </a>
+
+
+            <a
+                href="#team"
+                class="nav-link"
+                data-page="team"
+            >
+                <i class="fa-solid fa-user-group"></i>
+                <span>Team</span>
+            </a>
+
+        </nav>
+
+
+        <!-- Viewer Access -->
+
+        <div class="viewer-access">
+
+            <span class="access-label">
+                ACCESS LEVEL
+            </span>
+
+            <div class="access-row">
+
+                <i class="fa-solid fa-eye"></i>
+
+                <div>
+                    <strong>View Only</strong>
+                    <span>Read-only access</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Logout -->
+
+        <div class="sidebar-bottom">
+
+            <a
+                href="index.html"
+                class="logout-link"
+            >
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main-content">
+
+
+        <!-- ================= HEADER ================= -->
+
+        <header class="dashboard-header">
+
+            <div class="header-left">
+
+                <button
+                    class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="Open menu"
+                >
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div>
+
+                    <span class="header-label">
+                        STACKLY BPO / VIEWER
+                    </span>
+
+                    <h1 id="pageTitle">
+                        Overview
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <div class="header-right">
+
+                <button
+                    class="header-button"
+                    aria-label="Search"
+                >
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+
+
+                <button
+                    class="header-button notification"
+                    aria-label="Notifications"
+                >
+                    <i class="fa-regular fa-bell"></i>
+                    <span></span>
+                </button>
+
+
+                <div class="header-profile">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=85"
+                        alt="Alex Morgan"
+                    >
+
+                    <div>
+                        <strong>Alex Morgan</strong>
+                        <span>Viewer</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= CONTENT ================= -->
+
+        <div class="content-container">
+
+
+            <!-- ================= OVERVIEW ================= -->
+
+            <section
+                class="page active-page"
+                id="overview"
+            >
+
+                <div
+                    class="welcome"
+                    data-aos="fade-up"
+                >
+
+                    <div>
+
+                        <span class="section-label">
+                            VIEWER OVERVIEW
+                        </span>
+
+                        <h2>
+                            Welcome back, Alex.
+                        </h2>
+
+                        <p>
+                            View the latest performance and operational
+                            information across Stackly BPO.
+                        </p>
+
+                    </div>
+
+
+                    <div class="read-only-badge">
+
+                        <i class="fa-solid fa-eye"></i>
+
+                        View Only
+
+                    </div>
+
+                </div>
+
+
+                <!-- Stats -->
+
+                <div class="stats-grid">
+
+
+                    <div
+                        class="stat-card"
+                        data-aos="fade-up"
+                        data-aos-delay="100"
+                    >
+
+                        <div class="stat-icon">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+
+                        <span>Total Customers</span>
+
+                        <strong>1,248</strong>
+
+                        <small>
+                            +12.5% this month
+                        </small>
+
+                    </div>
+
+
+                    <div
+                        class="stat-card"
+                        data-aos="fade-up"
+                        data-aos-delay="200"
+                    >
+
+                        <div class="stat-icon">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+
+                        <span>Active Services</span>
+
+                        <strong>24</strong>
+
+                        <small>
+                            Across 4 operations
+                        </small>
+
+                    </div>
+
+
+                    <div
+                        class="stat-card"
+                        data-aos="fade-up"
+                        data-aos-delay="300"
+                    >
+
+                        <div class="stat-icon">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+
+                        <span>Performance</span>
+
+                        <strong>91.4%</strong>
+
+                        <small>
+                            +6.8% this month
+                        </small>
+
+                    </div>
+
+
+                    <div
+                        class="stat-card"
+                        data-aos="fade-up"
+                        data-aos-delay="400"
+                    >
+
+                        <div class="stat-icon">
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <span>Customer Rating</span>
+
+                        <strong>4.8</strong>
+
+                        <small>
+                            Based on 2,840 reviews
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Main Dashboard -->
+
+                <div class="overview-grid">
+
+
+                    <!-- Performance -->
+
+                    <div
+                        class="dashboard-card performance-card"
+                        data-aos="fade-up"
+                    >
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <span>
+                                    PERFORMANCE
+                                </span>
+
+                                <h3>
+                                    Operations Overview
+                                </h3>
+
+                            </div>
+
+                            <span class="period">
+                                2026
+                            </span>
+
+                        </div>
+
+
+                        <div class="performance-list">
+
+
+                            <div class="performance-item">
+
+                                <div class="performance-title">
+
+                                    <strong>
+                                        Customer Experience
+                                    </strong>
+
+                                    <span>
+                                        92%
+                                    </span>
+
+                                </div>
+
+                                <div class="progress">
+                                    <span style="width:92%"></span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="performance-item">
+
+                                <div class="performance-title">
+
+                                    <strong>
+                                        Back Office & Data
+                                    </strong>
+
+                                    <span>
+                                        86%
+                                    </span>
+
+                                </div>
+
+                                <div class="progress">
+                                    <span style="width:86%"></span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="performance-item">
+
+                                <div class="performance-title">
+
+                                    <strong>
+                                        Finance & Accounting
+                                    </strong>
+
+                                    <span>
+                                        78%
+                                    </span>
+
+                                </div>
+
+                                <div class="progress">
+                                    <span style="width:78%"></span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="performance-item">
+
+                                <div class="performance-title">
+
+                                    <strong>
+                                        IT Support
+                                    </strong>
+
+                                    <span>
+                                        94%
+                                    </span>
+
+                                </div>
+
+                                <div class="progress">
+                                    <span style="width:94%"></span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Quick Information -->
+
+                    <div
+                        class="dashboard-card info-card"
+                        data-aos="fade-up"
+                        data-aos-delay="150"
+                    >
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <span>
+                                    STATUS
+                                </span>
+
+                                <h3>
+                                    Operations Today
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="status-number">
+                            91.4%
+                        </div>
+
+                        <p>
+                            Overall operational performance
+                        </p>
+
+
+                        <div class="status-divider"></div>
+
+
+                        <div class="status-row">
+
+                            <span>
+                                Support Availability
+                            </span>
+
+                            <strong>
+                                24/7
+                            </strong>
+
+                        </div>
+
+
+                        <div class="status-row">
+
+                            <span>
+                                Active Teams
+                            </span>
+
+                            <strong>
+                                18
+                            </strong>
+
+                        </div>
+
+
+                        <div class="status-row">
+
+                            <span>
+                                Open Requests
+                            </span>
+
+                            <strong>
+                                42
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Recent Activity -->
+
+                <div
+                    class="dashboard-card activity-card"
+                    data-aos="fade-up"
+                >
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <span>
+                                LATEST
+                            </span>
+
+                            <h3>
+                                Recent Activity
+                            </h3>
+
+                        </div>
+
+                        <a
+                            href="#messages"
+                            data-page="messages"
+                            class="view-link"
+                        >
+                            View All ↗
+                        </a>
+
+                    </div>
+
+
+                    <div class="activity-grid">
+
+
+                        <div class="activity">
+
+                            <div class="activity-icon">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Customer request resolved
+                                </strong>
+
+                                <p>
+                                    Support request #ST-2481
+                                </p>
+
+                                <small>
+                                    12 minutes ago
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="activity">
+
+                            <div class="activity-icon">
+                                <i class="fa-solid fa-user-plus"></i>
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    New customer added
+                                </strong>
+
+                                <p>
+                                    Vertex Digital
+                                </p>
+
+                                <small>
+                                    45 minutes ago
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="activity">
+
+                            <div class="activity-icon">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Monthly performance updated
+                                </strong>
+
+                                <p>
+                                    September 2026 report
+                                </p>
+
+                                <small>
+                                    2 hours ago
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= CUSTOMERS ================= -->
+
+            <section
+                class="page"
+                id="customers"
+            >
+
+                <div class="page-heading">
+
+                    <span class="section-label">
+                        CUSTOMER INFORMATION
+                    </span>
+
+                    <h2>
+                        Customers
+                    </h2>
+
+                    <p>
+                        View customer accounts and current operational status.
+                    </p>
+
+                </div>
+
+
+                <div class="customer-table dashboard-card">
+
+                    <div class="table-head">
+
+                        <span>Customer</span>
+                        <span>Company</span>
+                        <span>Service</span>
+                        <span>Status</span>
+
+                    </div>
+
+
+                    <div class="table-row">
+
+                        <div class="person">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=85"
+                                alt="David Carter"
+                            >
+
+                            <strong>David Carter</strong>
+
+                        </div>
+
+                        <span>TechFlow Solutions</span>
+
+                        <span>Customer Experience</span>
+
+                        <b class="active-status">
+                            Active
+                        </b>
+
+                    </div>
+
+
+                    <div class="table-row">
+
+                        <div class="person">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=85"
+                                alt="Emily Johnson"
+                            >
+
+                            <strong>Emily Johnson</strong>
+
+                        </div>
+
+                        <span>Northstar Group</span>
+
+                        <span>Back Office</span>
+
+                        <b class="active-status">
+                            Active
+                        </b>
+
+                    </div>
+
+
+                    <div class="table-row">
+
+                        <div class="person">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=150&q=85"
+                                alt="Michael Brown"
+                            >
+
+                            <strong>Michael Brown</strong>
+
+                        </div>
+
+                        <span>Vertex Digital</span>
+
+                        <span>Finance Support</span>
+
+                        <b class="pending-status">
+                            Pending
+                        </b>
+
+                    </div>
+
+
+                    <div class="table-row">
+
+                        <div class="person">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=85"
+                                alt="Rachel Wilson"
+                            >
+
+                            <strong>Rachel Wilson</strong>
+
+                        </div>
+
+                        <span>Brightline Inc.</span>
+
+                        <span>IT Support</span>
+
+                        <b class="active-status">
+                            Active
+                        </b>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= SERVICES ================= -->
+
+            <section
+                class="page"
+                id="services"
+            >
+
+                <div class="page-heading">
+
+                    <span class="section-label">
+                        SERVICE OVERVIEW
+                    </span>
+
+                    <h2>
+                        Services
+                    </h2>
+
+                    <p>
+                        View current Stackly BPO service performance.
+                    </p>
+
+                </div>
+
+
+                <div class="service-grid">
+
+
+                    <div class="service-card">
+
+                        <span>01</span>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+
+                        <h3>
+                            Customer Experience
+                        </h3>
+
+                        <p>
+                            Customer support and communication operations.
+                        </p>
+
+                        <strong>92%</strong>
+
+                    </div>
+
+
+                    <div class="service-card">
+
+                        <span>02</span>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+
+                        <h3>
+                            Back Office & Data
+                        </h3>
+
+                        <p>
+                            Data processing and administrative operations.
+                        </p>
+
+                        <strong>86%</strong>
+
+                    </div>
+
+
+                    <div class="service-card">
+
+                        <span>03</span>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-calculator"></i>
+                        </div>
+
+                        <h3>
+                            Finance & Accounting
+                        </h3>
+
+                        <p>
+                            Accurate finance and accounting support.
+                        </p>
+
+                        <strong>78%</strong>
+
+                    </div>
+
+
+                    <div class="service-card">
+
+                        <span>04</span>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-computer"></i>
+                        </div>
+
+                        <h3>
+                            IT Support
+                        </h3>
+
+                        <p>
+                            Technical support and IT-enabled operations.
+                        </p>
+
+                        <strong>94%</strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= REPORTS ================= -->
+
+            <section
+                class="page"
+                id="reports"
+            >
+
+                <div class="page-heading">
+
+                    <span class="section-label">
+                        PERFORMANCE DATA
+                    </span>
+
+                    <h2>
+                        Reports
+                    </h2>
+
+                    <p>
+                        View operational reports and performance information.
+                    </p>
+
+                </div>
+
+
+                <div class="reports-box dashboard-card">
+
+                    <div class="report-title">
+
+                        <div>
+
+                            <span>
+                                MONTHLY REPORT
+                            </span>
+
+                            <h3>
+                                September 2026
+                            </h3>
+
+                        </div>
+
+                        <div class="report-status">
+                            Updated
+                        </div>
+
+                    </div>
+
+
+                    <div class="report-stats">
+
+                        <div>
+                            <span>Total Customers</span>
+                            <strong>1,248</strong>
+                        </div>
+
+                        <div>
+                            <span>Resolved Requests</span>
+                            <strong>2,842</strong>
+                        </div>
+
+                        <div>
+                            <span>Performance</span>
+                            <strong>91.4%</strong>
+                        </div>
+
+                        <div>
+                            <span>Rating</span>
+                            <strong>4.8</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="report-note">
+
+                        <i class="fa-solid fa-eye"></i>
+
+                        <p>
+                            This report is available in
+                            <strong>view-only mode</strong>.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= MESSAGES ================= -->
+
+            <section
+                class="page"
+                id="messages"
+            >
+
+                <div class="page-heading">
+
+                    <span class="section-label">
+                        COMMUNICATION
+                    </span>
+
+                    <h2>
+                        Messages
+                    </h2>
+
+                    <p>
+                        View recent operational communication.
+                    </p>
+
+                </div>
+
+
+                <div class="messages-list dashboard-card">
+
+
+                    <div class="message-row">
+
+                        <div class="message-avatar">
+                            SM
+                        </div>
+
+                        <div class="message-content">
+
+                            <strong>
+                                Sarah Mitchell
+                            </strong>
+
+                            <p>
+                                Monthly performance report has been updated.
+                            </p>
+
+                            <small>
+                                15 minutes ago
+                            </small>
+
+                        </div>
+
+                        <span class="unread">
+                            New
+                        </span>
+
+                    </div>
+
+
+                    <div class="message-row">
+
+                        <div class="message-avatar">
+                            DC
+                        </div>
+
+                        <div class="message-content">
+
+                            <strong>
+                                David Carter
+                            </strong>
+
+                            <p>
+                                Customer support request has been resolved.
+                            </p>
+
+                            <small>
+                                1 hour ago
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="message-row">
+
+                        <div class="message-avatar">
+                            EJ
+                        </div>
+
+                        <div class="message-content">
+
+                            <strong>
+                                Emily Johnson
+                            </strong>
+
+                            <p>
+                                Finance operations update is available.
+                            </p>
+
+                            <small>
+                                3 hours ago
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= TEAM ================= -->
+
+            <section
+                class="page"
+                id="team"
+            >
+
+                <div class="page-heading">
+
+                    <span class="section-label">
+                        OPERATIONS TEAM
+                    </span>
+
+                    <h2>
+                        Team
+                    </h2>
+
+                    <p>
+                        View members currently supporting Stackly operations.
+                    </p>
+
+                </div>
+
+
+                <div class="team-grid">
+
+
+                    <div class="team-card">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=500&q=85"
+                            alt="Sarah Mitchell"
+                        >
+
+                        <div>
+
+                            <span>OPERATIONS</span>
+
+                            <h3>
+                                Sarah Mitchell
+                            </h3>
+
+                            <p>
+                                Operations Manager
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="team-card">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=500&q=85"
+                            alt="David Carter"
+                        >
+
+                        <div>
+
+                            <span>CUSTOMER SUCCESS</span>
+
+                            <h3>
+                                David Carter
+                            </h3>
+
+                            <p>
+                                Customer Success Lead
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="team-card">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=85"
+                            alt="Emily Johnson"
+                        >
+
+                        <div>
+
+                            <span>FINANCE</span>
+
+                            <h3>
+                                Emily Johnson
+                            </h3>
+
+                            <p>
+                                Finance Lead
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="team-card">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=500&q=85"
+                            alt="Michael Brown"
+                        >
+
+                        <div>
+
+                            <span>TECHNOLOGY</span>
+
+                            <h3>
+                                Michael Brown
+                            </h3>
+
+                            <p>
+                                IT Support Lead
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- AOS -->
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- GSAP -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <script src="js/viewer.js"></script>
+
+</body>
+</html>
